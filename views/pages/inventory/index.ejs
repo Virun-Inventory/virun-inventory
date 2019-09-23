@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virun Inventory</title>
+    <style>
+        #inventory-list {
+            border-collapse: collapse;
+        }
+        #inventory-list tr {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+<% include ../../partials/header %>
+
+<table id="inventory-list" cellpadding="10">
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Received</th>
+        <th>On Hand</th>
+        <th>Min. Required</th>
+    </thead>
+    <tbody>
+    <% inventory.forEach(item => { %>
+        <tr class="item">
+            <td class="item-id"><%= item._id.slice(0, 8)%></td>
+            <td class="item-name"><%= item.name%></td>
+            <td class="item-received"><%= item.received%></td>
+            <td class="item-onhand"><%= item.on_hand%></td>
+            <td class="item-required"><%= item.minimum_required%></td>
+        </tr>
+    <% }); %>
+    </tbody>
+</table>
+
+
+</body>
+</html>

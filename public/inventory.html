@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Virun Inventory</title>
+    <style>
+        #inventory-list {
+            border-collapse: collapse;
+        }
+
+        #inventory-list tr {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="inventory-list" cellpadding="10">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Received</th>
+            <th>On Hand</th>
+            <th>Min. Required</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+
+    <template id="inventory-item">
+        <tr class="item">
+            <td class="item-id"></td>
+            <td class="item-name"></td>
+            <td class="item-received"></td>
+            <td class="item-onhand"></td>
+            <td class="item-required"></td>
+        </tr>
+    </template>
+
+    <script>
+
+        (async function() {
+
+            let list = document.querySelector('#inventory-list tbody');
+            let itemTpl = document.getElementById('inventory-item');
+
+            let inventory = await fetch('http://35.165.7.53:3000/inventory')
+                .then(res => res.json());
+
+            for (let item of inventory) {
+                let rowEl = itemTpl.content.cloneNode(true);
+
+                rowEl.querySelector('.item-id').textContent = item['_id'].slice(0, 8);
+                rowEl.querySelector('.item-name').textContent = item['name'];
+                rowEl.querySelector('.item-received').textContent = item['received'];
+                rowEl.querySelector('.item-onhand').textContent = item['on_hand'];
+                rowEl.querySelector('.item-required').textContent = item['minimum_required'];
+
+                list.appendChild(rowEl);
+            }
+        })();
+
+
+    </script>
+
+</body>
+</html>
