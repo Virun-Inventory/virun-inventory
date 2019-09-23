@@ -1,0 +1,27 @@
+body {
+    background-color: #d3d3d3;
+    
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 600px;
+    justify-content: center;
+}
+.names {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    
+}
+
+.company {
+    display: grid;
+    grid-template-columns: 166px;
+}
+
+.product {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    
+}
+
