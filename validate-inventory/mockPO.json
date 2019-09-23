@@ -1,0 +1,23 @@
+{
+    "PO_Num": 2031,
+    "lineItems": {
+        "item1": {
+            "ingredients": {
+                "770bc75d": 22,
+                "b7675daa": 17,
+                "12338274": 12
+            },
+            "quantity": 3
+        },
+        "item2": {
+            "ingredients": {
+                "bfd2f2cf": 13,
+                "b7675daa": 33,
+                "902bcef5": 28
+            },
+            "quantity": 6
+        }
+    },
+    "subtotal": 3750.22,
+    "total": 4000.34
+}
