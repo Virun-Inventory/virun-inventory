@@ -46,7 +46,7 @@
             let list = document.querySelector('#inventory-list tbody');
             let itemTpl = document.getElementById('inventory-item');
 
-            let inventory = await fetch('http://35.165.7.53:3000/inventory')
+            let inventory = await fetch('http://35.165.7.53:3000/api/inventory')
                 .then(res => res.json());
 
             for (let item of inventory) {
