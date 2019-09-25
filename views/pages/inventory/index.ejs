@@ -25,6 +25,7 @@
         <th>Min. Required</th>
     </thead>
     <tbody>
+    <% var inventory; %>
     <% inventory.forEach(item => { %>
         <tr class="item">
             <td class="item-id"><%= item._id.slice(0, 8)%></td>
